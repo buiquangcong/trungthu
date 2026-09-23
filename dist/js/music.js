@@ -1,4 +1,4 @@
-/* Mobile-optimized music player with direct streaming & bulletproof iOS/Android unlock */
+/* Mobile & Desktop Auto-play Music Engine */
 (function() {
   "use strict";
 
@@ -6,11 +6,11 @@
   var baseVolume = 0.55;
   var currentSource = defaultMusic;
   var audio = null;
-  var fadeTimer = 0;
   var subscribers = new Set();
-  var wantsPlay = false;
+  var wantsPlay = true; // Auto-play enabled by default!
   var isUnlocked = false;
   var duckFactor = 1;
+  var fadeTimer = 0;
 
   function getEffectiveVolume() {
     return Math.max(0, Math.min(1, baseVolume * duckFactor));
@@ -35,18 +35,18 @@
       audio.volume = getEffectiveVolume();
 
       audio.addEventListener("play", notifySubscribers);
-      audio.addEventListener("pause", notifySubscribers);
       audio.addEventListener("playing", notifySubscribers);
+      audio.addEventListener("pause", notifySubscribers);
       audio.addEventListener("ended", notifySubscribers);
       audio.addEventListener("error", function(e) {
-        console.warn("Audio element error, will retry:", e);
+        console.warn("Audio element warning:", e);
       });
     }
     return audio;
   }
 
   function isPlaying() {
-    return !!audio && !audio.paused && audio.currentTime > 0;
+    return !!audio && !audio.paused;
   }
 
   function fadeTo(targetVol, duration, onComplete) {
@@ -54,7 +54,7 @@
     clearInterval(fadeTimer);
     var startTime = performance.now();
     var startVol = a.volume;
-    var dur = duration || 1200;
+    var dur = duration || 800;
 
     fadeTimer = setInterval(function() {
       var progress = Math.min(1, (performance.now() - startTime) / dur);
@@ -71,6 +71,7 @@
   function doPlay() {
     var a = getAudio();
     wantsPlay = true;
+    a.volume = getEffectiveVolume();
     if (a.src !== currentSource && !currentSource.startsWith("blob:")) {
       a.src = currentSource;
       a.load();
@@ -79,86 +80,61 @@
     if (promise !== undefined) {
       promise.then(function() {
         isUnlocked = true;
-        fadeTo(getEffectiveVolume(), 2000);
+        notifySubscribers();
       }).catch(function(err) {
-        console.log("Autoplay waiting for user gesture:", err.message);
-        setupUserGestureListener();
-      });
-    }
-  }
-
-  function setupUserGestureListener() {
-    var events = ["touchstart", "touchend", "pointerdown", "click"];
-    function onGesture() {
-      events.forEach(function(ev) {
-        window.removeEventListener(ev, onGesture, true);
-      });
-      if (wantsPlay) {
-        var a = getAudio();
-        if (a.paused) {
-          var p = a.play();
-          if (p !== undefined) {
-            p.then(function() {
-              isUnlocked = true;
-              fadeTo(getEffectiveVolume(), 1500);
-            }).catch(function() {
-              // Retry on next touch if still denied
-              setupUserGestureListener();
-            });
-          }
-        }
-      }
-    }
-    events.forEach(function(ev) {
-      window.addEventListener(ev, onGesture, true);
-    });
-  }
-
-  function doPause() {
-    wantsPlay = false;
-    if (audio) {
-      fadeTo(0, 500, function() {
-        audio.pause();
+        // Autoplay blocked by browser policy until first touch
+        console.log("Autoplay waiting for first touch:", err.message);
         notifySubscribers();
       });
     }
   }
 
-  function unlock() {
-    var a = getAudio();
-    if (!isUnlocked) {
-      // Direct synchronous unlock on touch
-      var p = a.play();
-      if (p !== undefined) {
-        p.then(function() {
-          isUnlocked = true;
-          if (!wantsPlay) {
-            // Keep playing if user already wants play, else pause
-            a.pause();
-            a.currentTime = 0;
-          }
-        }).catch(function() {});
+  function doPause() {
+    wantsPlay = false;
+    if (audio) {
+      audio.pause();
+      notifySubscribers();
+    }
+  }
+
+  // Automatic global gesture unlock: ANY user tap on the screen immediately starts audio if blocked
+  function onFirstUserGesture() {
+    if (wantsPlay) {
+      var a = getAudio();
+      if (a.paused) {
+        a.volume = getEffectiveVolume();
+        var p = a.play();
+        if (p !== undefined) {
+          p.then(function() {
+            isUnlocked = true;
+            notifySubscribers();
+          }).catch(function() {});
+        }
       }
     }
   }
 
-  // Global touch listener to ensure audio starts on any mobile tap once requested
   if (typeof window !== "undefined") {
-    var unlockEvents = ["touchstart", "touchend", "pointerdown", "click"];
-    unlockEvents.forEach(function(ev) {
-      window.addEventListener(ev, function() {
-        if (wantsPlay && audio && audio.paused) {
-          audio.play().catch(function() {});
-        }
-      }, { capture: true, passive: true });
+    var gestureEvents = ["touchstart", "touchend", "pointerdown", "mousedown", "click", "keydown"];
+    gestureEvents.forEach(function(ev) {
+      window.addEventListener(ev, onFirstUserGesture, { capture: true, passive: true });
     });
+
+    // Also attempt autoplay immediately as soon as page is loaded/interactive
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setTimeout(doPlay, 100);
+    } else {
+      window.addEventListener("DOMContentLoaded", function() {
+        setTimeout(doPlay, 100);
+      });
+    }
   }
 
   window.TTMusic = {
     setDuck: function(factor, duration) {
       duckFactor = Math.max(0, Math.min(1, typeof factor === "number" ? factor : 1));
       if (audio && !audio.paused) {
-        fadeTo(getEffectiveVolume(), duration || 900);
+        fadeTo(getEffectiveVolume(), duration || 800);
       }
     },
     setSource: function(url, vol) {
@@ -168,19 +144,20 @@
       var clean = (url && String(url).trim()) || defaultMusic;
       currentSource = clean;
       if (audio) {
-        var wasPlaying = !audio.paused;
         audio.src = currentSource;
-        audio.load();
-        if (wasPlaying) {
+        audio.volume = getEffectiveVolume();
+        if (wantsPlay) {
           audio.play().catch(function() {});
         }
+      } else {
+        doPlay();
       }
     },
     prepare: function() {
-      getAudio();
+      doPlay();
     },
     unlock: function() {
-      unlock();
+      onFirstUserGesture();
     },
     play: function() {
       doPlay();
@@ -198,6 +175,8 @@
     isPlaying: isPlaying,
     subscribe: function(fn) {
       subscribers.add(fn);
+      // Immediately notify current state
+      try { fn(isPlaying()); } catch(e) {}
       return function() {
         subscribers.delete(fn);
       };
