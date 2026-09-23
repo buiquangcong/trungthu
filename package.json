@@ -1,0 +1,18 @@
+{
+  "name": "festgift-trung-thu-clone",
+  "version": "1.0.0",
+  "description": "Bản sao chép cấu trúc website Thiệp Trung Thu (FestGift) với hiệu ứng 3D, thư tay, nhạc nền và ảnh kỷ niệm",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "thiep-trung-thu",
+    "threejs",
+    "festgift",
+    "mid-autumn-card"
+  ],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Thiệp Trung Thu">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/ui/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="./assets/ui/heart.svg">
+    <meta name="theme-color" content="#050a14">
+
+    <!-- SEO Trung Thu -->
+    <meta name="description"
+        content="Gửi thiệp Trung Thu đẹp với hiệu ứng 3D, lá thư và nhạc nền. Chúc mừng Tết Trung Thu đến những người thân yêu.">
+    <meta name="keywords"
+        content="thiệp trung thu, tết trung thu, trung thu, thiệp online trung thu, chúc mừng trung thu, quà trung thu, đèn lồng, trăng rằm">
+    <meta name="author" content="FestGift">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thiệp Trung Thu — FestGift">
+    <meta property="og:description"
+        content="Gửi thiệp Trung Thu đẹp với hiệu ứng 3D, lá thư và nhạc nền đến những người thân yêu.">
+    <meta property="og:image" content="./assets/ui/og-moon.png">
+    <meta property="og:site_name" content="Thiệp Trung Thu — FestGift">
+
+    <title>Thiệp Trung Thu — FestGift</title>
+
+    <!-- Font Mali cho gợi ý trên trăng, chữ bay và lá thư -->
+    <link rel="preload" href="./assets/font/Mali.ttf" as="font" type="font/ttf" crossorigin>
+    <!-- Font lá thư tự lưu trong /assets/font (Dancing Script + Charm, có dấu tiếng Việt) -->
+    <link rel="preload" href="./assets/font/charm-vietnamese-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./dist/styles/index.css">
+</head>
+
+<body>
+    <!-- Cảnh 3D (canvas do js/scene.js tạo) -->
+    <div id="scene-root"></div>
+
+    <!-- Màn trạng thái: hiện ngay khi đang tải cấu hình (js/index.js thay nội dung khi lỗi) -->
+    <div id="mtb" class="mtb mtb-tai" role="status">
+        <div class="mtb-hop">
+            <div class="mtb-icon" aria-hidden="true">🌕</div>
+            <h1 class="mtb-tieude">Đang mở thiệp…</h1>
+            <p class="mtb-mo">Chờ một chút, trăng đang lên.</p>
+        </div>
+    </div>
+
+    <!-- Script thường (chạy theo thứ tự, trước module) -->
+    <script defer src="./dist/js/tap.js"></script>
+    <script defer src="./dist/js/idb-storage.js"></script>
+    <script defer src="./dist/js/index.js"></script>
+    <script defer src="./dist/js/music.js"></script>
+    <script defer src="./dist/js/intro.js"></script>
+    <script defer src="./dist/js/letter.js"></script>
+    <script defer src="./dist/js/topbar.js"></script>
+    <script defer src="./dist/js/lang-man.js"></script>
+
+    <!-- Thư viện 3D: three r169, postprocessing 6.39.5, troika 0.52 -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/",
+          "postprocessing": "https://cdn.jsdelivr.net/npm/postprocessing@6.39.5/build/index.js",
+          "troika-three-text": "https://cdn.jsdelivr.net/npm/troika-three-text@0.52.4/dist/troika-three-text.esm.js",
+          "troika-three-utils": "https://cdn.jsdelivr.net/npm/troika-three-utils@0.52.4/dist/troika-three-utils.esm.js",
+          "troika-worker-utils": "https://cdn.jsdelivr.net/npm/troika-worker-utils@0.52.0/dist/troika-worker-utils.esm.js",
+          "webgl-sdf-generator": "https://cdn.jsdelivr.net/npm/webgl-sdf-generator@1.1.1/dist/webgl-sdf-generator.mjs",
+          "bidi-js": "https://cdn.jsdelivr.net/npm/bidi-js@1.0.3/dist/bidi.mjs"
+        }
+      }
+    </script>
+    <script type="module" src="./dist/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="./dist/js/bug-report.js?v=1790143258759"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Preconnect & DNS Prefetch: giảm độ trễ kết nối đến các domain quan trọng -->
+    <link rel="preconnect" href="https://api2.festgift.top" crossorigin>
+    <link rel="dns-prefetch" href="https://api2.festgift.top">
+    <link rel="preconnect" href="https://cdn.festgift.top" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.festgift.top">
+    <link rel="preconnect" href="https://payos-check.onrender.com">
+    <link rel="dns-prefetch" href="https://payos-check.onrender.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://translate.google.com">
+    <link rel="dns-prefetch" href="https://qr.festgift.top">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Tạo thiệp Trung Thu đẹp, có hiệu ứng 3D, lá thư, nhạc nền. Gửi tặng người thân yêu nhân dịp Tết Trung Thu.">
+    <meta name="keywords"
+        content="thiệp trung thu, tạo thiệp trung thu, trung thu, tết trung thu, thiệp online, quà trung thu, tặng quà trung thu">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tạo Thiệp Trung Thu — FestGift">
+    <meta property="og:description"
+        content="Tạo thiệp Trung Thu đẹp với hiệu ứng 3D, lá thư, nhạc nền. Gửi tặng người thân yêu nhân dịp Tết Trung Thu.">
+    <meta property="og:image" content="https://cdn.festgift.top/projects/womens-day/images/icons/couple.png">
+    <link rel="stylesheet" href="./dist/styles/create.css?v=1790143258759">
+    <link rel="stylesheet" href="./dist/styles/lucky-wheel.css?v=1790143258759">
+    <link rel="canonical" href="https://trungthu.festgift.top/create.html">
+    <title>Tạo Thiệp Trung Thu — FestGift</title>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tạo Thiệp Trung Thu — FestGift",
+      "url": "https://trungthu.festgift.top/create.html",
+      "description": "Công cụ tạo thiệp Trung Thu online với hiệu ứng 3D, lá thư, nhạc nền.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://trungthu.festgift.top/create.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Thiệp Trung Thu FestGift là gì?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thiệp Trung Thu FestGift là nền tảng giúp bạn tạo thiệp chúc mừng Tết Trung Thu sinh động dưới dạng kỹ thuật số (3D, lá thư, nhạc nền) để gửi tặng người thân yêu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Làm thế nào để tạo thiệp Trung Thu online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bạn chỉ cần truy cập website, tải lên ảnh đôi, viết nội dung lá thư, chọn nhạc nền và màu thiệp. Hệ thống sẽ tạo ra thiệp 3D ấn tượng kèm đường link để chia sẻ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tạo thiệp Trung Thu có mất phí không?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Các tính năng cơ bản hoàn toàn miễn phí, để bạn dễ dàng gửi trọn vẹn tình cảm đến người thân nhân dịp Trung Thu."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/assets/ui/heart.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) - Lazy Load -->
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var script = document.createElement("script");
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-4BRLGZV418";
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', 'G-4BRLGZV418');
+            }, 3500); // Trì hoãn 3.5s để Googlebot ưu tiên render content chính yếu trước
+        });
+    </script>
+    <!-- Bảo vệ DevTools -->
+    <script defer>
+        const isBot = /Googlebot|bingbot|DuckDuckBot|Slurp|Yandex/i.test(navigator.userAgent);
+
+        if (!isBot) {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.festgift.top/projects/security/detect-devtools.js';
+            s.defer = true;
+            document.head.appendChild(s);
+
+            s.onload = () => {
+                DisableDevtool({
+                    tkName: 'key',
+                    md5: '1dcf8bc99cee59dab8358bcc40608a54',
+                    interval: '1000',
+                });
+            };
+        }
+    </script>
+    <!-- Firebase SDK -->
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script defer src="./dist/js/google-translate.js?v=1790143258759"></script>
+</head>
+
+<body>
+    <div id="google_translate_element" style="display:none" aria-hidden="true"></div>
+
+    <!-- Global login required overlay -->
+    <div id="globalLoginOverlay" class="global-login-overlay" style="display: none;">
+        <div class="login-prompt-card">
+            <div class="login-card-content">
+                <div class="login-card-icon">🔐</div>
+                <h2 class="login-card-title">Đăng nhập / Đăng ký</h2>
+                <p class="login-card-desc">
+                    Vui lòng đăng nhập để tạo và quản lý thiệp Trung Thu của bạn.
+                </p>
+
+                <!-- Auth method tabs -->
+                <div class="auth-method-tabs" role="tablist">
+                    <button type="button" class="auth-method-tab active" id="authTabGoogle" role="tab" aria-selected="true">Google</button>
+                    <button type="button" class="auth-method-tab" id="authTabEmail" role="tab" aria-selected="false">Email</button>
+                </div>
+
+                <!-- Google panel -->
+                <div id="authPanelGoogle" class="auth-panel">
+                    <button type="button" class="btn-login-overlay" id="btnLoginOverlay">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.52 12.29c0-.85-.08-1.68-.21-2.48H12v4.7h6.46c-.28 1.49-1.12 2.76-2.39 3.61v2.99h3.87c2.26-2.08 3.56-5.15 3.56-8.82z" fill="#4285F4" />
+                            <path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.87-2.99c-1.07.72-2.44 1.15-4.06 1.15-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z" fill="#34A853" />
+                            <path d="M5.27 14.29c-.25-.74-.39-1.53-.39-2.29s.14-1.55.39-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z" fill="#FBBC05" />
+                            <path d="M12 4.75c1.77 0 3.35.61 4.6 1.79l3.45-3.45C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z" fill="#EA4335" />
+                        </svg>
+                        <span id="btnLogin">Đăng nhập với Google</span>
+                    </button>
+                </div>
+
+                <!-- Email panel -->
+                <div id="authPanelEmail" class="auth-panel" style="display:none;">
+                    <!-- Login / Register sub-tabs -->
+                    <div class="auth-email-subtabs">
+                        <button type="button" class="auth-email-subtab active" id="emailSubLogin">Đăng nhập</button>
+                        <button type="button" class="auth-email-subtab" id="emailSubRegister">Đăng ký</button>
+                    </div>
+
+                    <!-- Login form -->
+                    <form id="emailLoginForm" class="auth-email-form" autocomplete="on" novalidate>
+                        <div class="auth-input-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" name="email" placeholder="example@gmail.com" autocomplete="email" required>
+                        </div>
+                        <div class="auth-input-group">
+                            <label for="loginPassword">Mật khẩu</label>
+                            <div class="auth-input-pw-wrap">
+                                <input type="password" id="loginPassword" name="password" placeholder="••••••••" autocomplete="current-password" required minlength="6">
+                                <button type="button" class="auth-pw-toggle" tabindex="-1" aria-label="Hiện/ẩn mật khẩu" data-target="loginPassword">👁</button>
+                            </div>
+                        </div>
+                        <div class="auth-message" id="loginMessage" role="alert" aria-live="polite"></div>
+                        <button type="submit" class="btn-login-overlay btn-email-submit" id="btnEmailLogin">Đăng nhập</button>
+                        <button type="button" class="auth-forgot-link" id="btnForgotPassword">Quên mật khẩu?</button>
+                    </form>
+
+                    <!-- Register form -->
+                    <form id="emailRegisterForm" class="auth-email-form" style="display:none;" autocomplete="on" novalidate>
+                        <div class="auth-input-group">
+                            <label for="registerName">Tên hiển thị</label>
+                            <input type="text" id="registerName" name="name" placeholder="Tên của bạn" autocomplete="name" maxlength="50">
+                        </div>
+                        <div class="auth-input-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" name="email" placeholder="example@gmail.com" autocomplete="email" required>
+                        </div>
+                        <div class="auth-input-group">
+                            <label for="registerPassword">Mật khẩu</label>
+                            <div class="auth-input-pw-wrap">
+                                <input type="password" id="registerPassword" name="password" placeholder="Tối thiểu 6 ký tự" autocomplete="new-password" required minlength="6">
+                                <button type="button" class="auth-pw-toggle" tabindex="-1" aria-label="Hiện/ẩn mật khẩu" data-target="registerPassword">👁</button>
+                            </div>
+                        </div>
+                        <div class="auth-input-group">
+                            <label for="registerPasswordConfirm">Xác nhận mật khẩu</label>
+                            <div class="auth-input-pw-wrap">
+                                <input type="password" id="registerPasswordConfirm" name="password2" placeholder="Nhập lại mật khẩu" autocomplete="new-password" required minlength="6">
+                                <button type="button" class="auth-pw-toggle" tabindex="-1" aria-label="Hiện/ẩn mật khẩu" data-target="registerPasswordConfirm">👁</button>
+                            </div>
+                        </div>
+                        <div class="auth-message" id="registerMessage" role="alert" aria-live="polite"></div>
+                        <button type="submit" class="btn-login-overlay btn-email-submit" id="btnEmailRegister">Tạo tài khoản</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Order history modal -->
+    <div class="order-history-modal" id="orderHistoryModal">
+        <div class="order-history-content">
+            <button class="order-history-close" id="closeOrderHistoryModal">&times;</button>
+            <div class="order-history-header">
+                <h3><span>🏮</span> Lịch sử đơn Thiệp Trung Thu</h3>
+            </div>
+            <div id="orderHistoryContent">
+                <div class="order-history-loading">
+                    <div class="creating-spinner"></div>
+                    <p>Đang tải danh sách đơn hàng...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment iframe modal (PayOS) -->
+    <!-- <div id="paymentModal" class="payment-modal-overlay">
+        <div class="payment-modal-content">
+            <iframe id="paymentIframe" style="width:100%;height:580px;border:none;border-radius:14px;"></iframe>
+        </div>
+    </div> -->
+    <div id="paymentModal" class="payment-modal-overlay" style="display:none;">
+        <div class="payment-modal-content">
+            <div class="payment-modal-header">
+                <h3>Đang chờ kết quả thanh toán...</h3>
+            </div>
+            <div class="payment-modal-body">
+                <div class="creating-spinner"></div>
+                <p>Vui lòng chờ trong giây lát. Đừng đóng cửa sổ này.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Auth header -->
+        <div class="auth-header">
+            <div class="auth-header-left">
+                <span>🏮</span>
+                <h2>Tạo Thiệp Trung Thu</h2>
+                <!-- Language picker -->
+                <div class="lang-picker" id="langPicker">
+                    <button type="button" class="lang-picker-btn" id="langPickerBtn" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="lang-picker-icon">🌐</span>
+                        <span class="lang-picker-label" id="langPickerLabel">VI</span>
+                    </button>
+                    <div class="lang-picker-dropdown" id="langPickerDropdown" role="listbox" aria-label="Chọn ngôn ngữ" style="display:none;">
+                        <div class="lang-picker-search-wrap">
+                            <input type="text" class="lang-picker-search" id="langPickerSearch" placeholder="Tìm ngôn ngữ..." autocomplete="off" spellcheck="false">
+                        </div>
+                        <ul class="lang-picker-list" id="langPickerList"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-header-right">
+                <button type="button" class="btn-auth" id="btnOrderHistory">📋 Lịch sử đơn</button>
+                <div id="authContainer">
+                    <button type="button" class="btn-auth" id="btnShowLogin">🔐 Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Chữ bay (flyingTexts) -->
+        <div class="section">
+            <div class="section-header-row">
+                <div class="section-title">
+                    <span class="icon">✍️</span><span class="step-badge">1</span> Chữ bay
+                    <span id="flyingTextsSectionPrice"
+                        style="font-size:.8rem;color:var(--muted);font-weight:400;margin-left:6px;">(—)</span>
+                </div>
+                <label class="toggle-switch" title="Bật/tắt chữ bay">
+                    <input type="checkbox" id="enableFlyingTexts">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="section-content-toggle" id="sectionFlyingTextsContent">
+                <div class="form-group">
+                    <p class="hint" style="margin-top:0;margin-bottom:8px;">Các dòng chữ bay lên màn hình. Tối đa 30 ký tự mỗi dòng, tối đa 10 dòng.</p>
+                    <div class="list-items" id="flyingTextsList"></div>
+                    <button type="button" class="btn-add" id="btnAddFlyingText">+ Thêm dòng chữ</button>
+                    <!-- Gợi ý chữ bay: bấm để thêm vào danh sách; câu đã thêm tự ẩn, xoá dòng thì hiện lại -->
+                    <div class="goiy-chu" id="flyingTextSuggest">
+                        <div class="goiy-chu-dau">
+                            <span>💡 Gợi ý chữ bay <small>— bấm để thêm</small></span>
+                            <button type="button" class="goiy-chu-an" id="btnToggleTextSuggest" aria-expanded="true">Ẩn gợi ý</button>
+                        </div>
+                        <div class="goiy-chu-than" id="flyingTextSuggestBody"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="hint" id="hintFlyingTextsOff" style="display:none;">Tắt = không có chữ bay.</p>
+        </div>
+
+        <!-- 2. Ảnh bay (flyingImages) -->
+        <div class="section">
+            <div class="section-header-row">
+                <div class="section-title">
+                    <span class="icon">🖼️</span><span class="step-badge">2</span> Ảnh bay
+                    <span id="flyingImagesSectionPrice"
+                        style="font-size:.8rem;color:var(--muted);font-weight:400;margin-left:6px;">(—)</span>
+                </div>
+                <label class="toggle-switch" title="Bật/tắt ảnh bay">
+                    <input type="checkbox" id="enableFlyingImages">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="section-content-toggle" id="sectionFlyingImagesContent">
+                <div class="form-group">
+                    <p class="hint" style="margin-top:0;margin-bottom:8px;">Tối đa 20 ảnh. Ảnh bay lên cùng chữ sau khi mở thiệp.</p>
+                    <div class="sphere-images-grid" id="flyingImagesContainer"></div>
+                    <input type="file" id="flyingImagesFile" accept="image/*" multiple style="display:none">
+                </div>
+            </div>
+            <p class="hint" id="hintFlyingImagesOff" style="display:none;">Tắt = không có ảnh bay.</p>
+        </div>
+
+        <!-- 3. Lá thư — người nhận xem sau phần chữ bay -->
+        <div class="section">
+            <div class="section-header-row">
+                <div class="section-title">
+                    <span class="icon">💌</span><span class="step-badge">3</span> Nội dung lá thư
+                    <span id="letterSectionPrice"
+                        style="font-size:.8rem;color:var(--muted);font-weight:400;margin-left:6px;">(—)</span>
+                </div>
+                <label class="toggle-switch" title="Bật/tắt lá thư">
+                    <input type="checkbox" id="enableLetter">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="section-content-toggle" id="sectionLetterContent">
+                <div class="form-group">
+                    <div
+                        style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px;">
+                        <label style="margin-bottom:0;">Nội dung thư (xuống dòng = Enter)</label>
+                        <button type="button" class="btn btn-ghost btn-sm" id="btnLetterTemplates">Gợi ý thư</button>
+                    </div>
+                    <textarea id="letterText"
+                        placeholder="Chúc mừng Tết Trung Thu!&#10;&#10;Mong bạn có một mùa trăng thật tươi vui và ấm áp."></textarea>
+                </div>
+                <div class="form-group">
+                    <div
+                        style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;">
+                        <label style="margin-bottom:0;">Ảnh trong thư (tùy chọn)</label>
+                        <label class="toggle-switch" title="Bật/tắt ảnh trong thư">
+                            <input type="checkbox" id="enableLetterImage">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div id="letterImageContent">
+                        <div class="img-input-row">
+                            <a id="flowerToolBtn" href="https://qr.festgift.top/flower.html" target="_blank"
+                                rel="noopener" class="btn-upload" title="Mở công cụ ghép ảnh vào bó hoa">
+                                🌸 Tạo ảnh bó hoa
+                            </a>
+                            <button type="button" class="btn-upload" id="letterImageUploadBtn">📁 Chọn ảnh</button>
+                            <button type="button" class="btn-upload btn-ghost" id="letterImageClearBtn"
+                                title="Xóa ảnh">✕ Xóa ảnh</button>
+                            <input type="file" id="letterImageFile" accept="image/*" style="display:none">
+                        </div>
+                        <input type="hidden" id="letterImageData" value="">
+                        <div class="img-preview">
+                            <img id="letterImagePreview" src="" alt="" style="display:none">
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label>Chữ ký / caption dưới ảnh</label>
+                            <input type="text" id="letterImageCaption" placeholder="♥ hoặc để trống" maxlength="80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="hint" id="hintLetterOff" style="display:none;">Tắt = không có lá thư, người nhận đi thẳng từ chữ bay sang trái tim.</p>
+        </div>
+
+        <!-- 4. Trái tim hạt + ảnh đôi (enableHeart) — bước cuối, mở sau lá thư -->
+        <div class="section">
+            <div class="section-header-row">
+                <div class="section-title">
+                    <span class="icon">💖</span><span class="step-badge">4</span> Trái tim hạt + ảnh đôi
+                    <span id="heartSectionPrice"
+                        style="font-size:.8rem;color:var(--muted);font-weight:400;margin-left:6px;">(—)</span>
+                </div>
+                <label class="toggle-switch" title="Bật/tắt cảnh trái tim hạt">
+                    <input type="checkbox" id="enableHeart">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="section-content-toggle" id="sectionHeartContent">
+                <div class="form-group">
+                    <!-- Couple photo picker — layout giống code-new -->
+                    <div class="couple-pick" id="couplePick">
+                        <!-- Frame xem trước trong thiệp -->
+                        <div class="couple-frame" id="coupleFrame" role="button" tabindex="0"
+                             title="Bấm để chọn ảnh đôi">
+                            <img class="couple-nen" src="./assets/ui/trai-tim-moi.png" alt="" aria-hidden="true" draggable="false">
+                            <img class="couple-anh" id="heartCouplePreview" src="" alt="Ảnh đôi" draggable="false" style="display:none;">
+                            <div class="couple-empty" id="coupleEmpty">
+                                <span id="coupleEmptyIcon">📷</span>
+                                <span id="coupleEmptyText">Chọn ảnh đôi</span>
+                            </div>
+                            <div class="couple-nhan" id="coupleNhan" style="display:none;">Xem trước trong thiệp</div>
+                            <div class="couple-tiendo" id="coupleTienDo" style="display:none;"></div>
+                        </div>
+                        <!-- Controls bên phải -->
+                        <div class="couple-side">
+                            <p class="hint" style="margin-top:0;margin-bottom:10px;">
+                                Hãy thêm ảnh hai bạn vào đây. Nhớ <b>xoá phông</b> để đẹp nhất có thể.
+                            </p>
+                            <button type="button" class="btn btn-ghost btn-sm couple-goiy-nut" id="btnCoupleGoiy">
+                                💡 Chưa có ảnh ôm nhau? Xem gợi ý
+                            </button>
+                            <div class="couple-btn-row" id="coupleBtnRow">
+                                <button type="button" class="btn btn-secondary btn-sm" id="heartCoupleUploadBtn">Chọn ảnh</button>
+                                <!-- Hiện khi đã có ảnh -->
+                                <button type="button" class="btn btn-secondary btn-sm" id="heartCoupleCropBtn" style="display:none;">Cắt ảnh</button>
+                                <button type="button" class="btn btn-secondary btn-sm" id="heartCoupleRemoveBgBtn" style="display:none;">Xoá nền</button>
+                                <!-- Hoàn tác -->
+                                <button type="button" class="btn btn-ghost btn-sm" id="heartCoupleUndoBtn" style="display:none;">Hoàn tác</button>
+                                <!-- Bỏ ảnh / Dùng ảnh mẫu -->
+                                <button type="button" class="btn btn-ghost btn-sm" id="heartCoupleClearBtn" style="display:none;">Bỏ ảnh</button>
+                                <button type="button" class="btn btn-ghost btn-sm" id="heartCoupleSampleBtn">Dùng ảnh mẫu</button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="file" id="heartCoupleFile" accept="image/*,.heic,.heif" style="display:none">
+                    <input type="hidden" id="heartCoupleData" value="">
+                    <input type="hidden" id="heartCoupleDataGoc" value="">
+                </div>
+            </div>
+            <p class="hint" id="hintHeartOff" style="display:none;">Tắt = bỏ qua cảnh trái tim hạt.</p>
+
+            <!-- Modal cắt ảnh đôi -->
+            <div id="coupleCropModal" class="crop-modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-label="Cắt ảnh đôi">
+                <div class="crop-modal-box">
+                    <div class="crop-modal-header">
+                        <h3>Cắt ảnh đôi</h3>
+                        <button type="button" class="crop-modal-close" id="coupleCropClose" aria-label="Đóng">&times;</button>
+                    </div>
+                    <div class="crop-modal-body">
+                        <div class="crop-container">
+                            <img id="coupleCropImg" src="" alt="Ảnh gốc để cắt">
+                        </div>
+                        <div class="crop-zoom-row">
+                            <span aria-hidden="true">−</span>
+                            <input type="range" id="coupleCropZoom" min="1" max="5" step="any" value="1" aria-label="Phóng to ảnh">
+                            <span aria-hidden="true">+</span>
+                        </div>
+                        <p class="hint" style="text-align:center;margin-top:6px;">Kéo để di chuyển • Cuộn chuột, chụm 2 ngón hoặc kéo thanh trượt để phóng to</p>
+                    </div>
+                    <div class="crop-modal-footer">
+                        <button type="button" class="btn btn-ghost btn-sm" id="coupleCropCancel">Hủy</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="coupleCropDone">✓ Xong</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal gợi ý ảnh đôi -->
+            <div id="coupleGoiyModal" class="help-modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-label="Gợi ý tạo ảnh đôi">
+                <div class="help-modal couple-goiy-modal-box">
+                    <div class="help-modal-header">
+                        <h3 style="margin:0;font-size:1rem;">Chưa có ảnh ôm nhau?</h3>
+                        <button type="button" class="help-modal-close" id="coupleGoiyClose" aria-label="Đóng">&times;</button>
+                    </div>
+                    <div class="help-modal-body" id="coupleGoiyBody"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Nhạc nền -->
+        <div class="section">
+            <div class="section-title"><span class="icon">🎵</span><span class="step-badge">5</span> Nhạc nền <span
+                    id="musicSectionPrice" style="font-size:.8rem;color:var(--muted);font-weight:400;">(—)</span></div>
+            <div class="form-group">
+                <div class="music-source-tabs">
+                    <button type="button" class="music-tab active" id="musicTabPreset" data-source="preset">Nhạc có
+                        sẵn</button>
+                    <button type="button" class="music-tab" id="musicTabFile" data-source="file">Chọn nhạc của
+                        bạn</button>
+                    <button type="button" class="music-tab" id="musicTabUrl" data-source="url">URL nhạc</button>
+                </div>
+
+                <!-- Block: Nhạc có sẵn -->
+                <div id="musicPresetBlock" class="music-block">
+                    <div class="music-grid-wrapper" id="musicGridWrapper">
+                        <div class="music-grid" id="musicGrid"></div>
+                        <div class="music-more-wrap" id="musicMoreWrap" style="display:none">
+                            <button type="button" class="btn btn-secondary" id="btnMusicViewMore">Xem thêm</button>
+                        </div>
+                    </div>
+                    <audio id="musicPreviewPlayer" style="display:none"></audio>
+                    <p class="hint">Nhấn vào bài để nghe thử. Nhấn lại để tắt.</p>
+                </div>
+
+                <!-- Block: Chọn file -->
+                <div id="musicFileBlock" class="music-block" style="display:none;">
+                    <div class="music-input-row">
+                        <!-- Khi chưa chọn file -->
+                        <div id="customMusicEmpty" class="music-input-empty"
+                            style="display:flex;align-items:center;gap:10px;">
+                            <button type="button" class="btn btn-secondary btn-sm" id="btnPickMusic"
+                                style="height:38px;">📂 Chọn file MP3</button>
+                            <span class="hint" style="margin:0;">(Tối đa 5MB)</span>
+                        </div>
+                        <!-- Khi đã chọn file: card kiểu nhạc mẫu -->
+                        <div id="customMusicCard" class="music-card"
+                            style="display:none;width:100%;max-width:400px;margin:0;">
+                            <div class="music-icon">🎵</div>
+                            <div class="music-name" id="customMusicName"
+                                style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Chưa chọn file</div>
+                            <div class="music-wave" id="customMusicWave">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                            <button type="button" class="btn-remove" id="btnClearCustomMusic" title="Xóa file"
+                                style="margin-left:auto;width:30px;height:30px;margin-top:0;">✕</button>
+                        </div>
+                    </div>
+                    <input type="file" id="bgMusicFile" accept="audio/mp3,audio/mpeg,.mp3" style="display:none">
+                    <p class="hint">Ưu tiên dùng nhạc có sẵn. File lớn (&gt;5MB) có thể ảnh hưởng khi tạo.</p>
+                    <span class="music-guide-link" id="btnMusicGuide" role="button" tabindex="0">Hướng dẫn tải file
+                        MP3</span>
+                </div>
+
+                <!-- Block: URL nhạc -->
+                <div id="musicUrlBlock" class="music-block" style="display:none;">
+                    <div class="music-url-row">
+                        <input type="url" class="music-url-input" id="customMusicUrlInput"
+                            placeholder="https://example.com/music.mp3">
+                    </div>
+                    <div id="customMusicUrlCard" class="music-card music-url-card"
+                        style="display:none;width:100%;max-width:520px;margin-top:10px;">
+                        <div class="music-icon">🎵</div>
+                        <div class="music-name" id="customMusicUrlName">custom</div>
+                        <div class="music-wave" id="customMusicUrlWave">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                        <button type="button" class="btn-remove" id="btnClearCustomMusicUrl" title="Xóa URL"
+                            style="margin-left:auto;width:30px;height:30px;margin-top:0;">×</button>
+                    </div>
+                    <p class="hint" id="customMusicUrlHint">Dán link trực tiếp tới file nhạc. URL custom miễn phí và sẽ
+                        được kiểm tra phát thử trước khi dùng.</p>
+                </div>
+            </div>
+        </div>
+        <!-- 6. Tiền tip & Mã giảm giá -->
+        <div class="section">
+            <div class="section-title"><span class="icon">💰</span><span class="step-badge">6</span> Tiền tip & Mã giảm
+                giá</div>
+            <div class="tip-voucher-grid">
+                <div class="tip-voucher-card">
+                    <div class="card-title"><span>💵</span> Tiền tip (Tùy chọn)</div>
+                    <div class="tip-preset-btns" id="tipPresetBtns"></div>
+                    <input type="number" id="tipAmount" min="0" step="1000" placeholder="0" value="0"
+                        inputmode="numeric">
+                    <p class="tip-hint" id="tipHint">Hỗ trợ đội ngũ phát triển (tùy chọn, đơn vị VNĐ hoặc USD)</p>
+                </div>
+                <div class="tip-voucher-card">
+                   <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                        <span><span>🎫</span> <span>Mã giảm giá</span></span>
+                        <button type="button" id="btnOpenLuckyWheel"
+                            style="display:none;background:linear-gradient(90deg,#7c3aed,#db2777);color:#fff;border:none;
+                                   border-radius:20px;padding:6px 14px;font-size:0.8rem;font-weight:700;cursor:pointer;
+                                   white-space:nowrap;-webkit-tap-highlight-color:transparent;
+                                   box-shadow:0 3px 12px rgba(124,58,237,.4);transition:transform .15s;"
+                            title="Quay để nhận mã giảm giá">
+                            🎡 Lấy mã
+                        </button>
+                    </div>
+                    <div class="form-group" id="voucherFormGroup" style="margin-bottom:12px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <label style="font-size:0.85rem;color:var(--text-muted);margin:0;">Voucher đã lưu</label>
+                            <button type="button" class="btn btn-ghost btn-sm" id="btnReloadVouchers" title="Tải lại"
+                                style="padding: 2px 8px; font-size: 0.8rem; height: auto; min-height: unset; line-height: 1.2;">Làm
+                                mới</button>
+                        </div>
+                        <div id="voucherListContainer">Đang tải...</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label style="font-size:0.85rem;color:var(--text-muted);">Nhập mã mới</label>
+                        <div class="voucher-apply-row">
+                            <input type="text" id="voucherCodeInput" data-i18n-ph="voucher_code_ph"
+                                placeholder="Nhập mã voucher" maxlength="50" autocomplete="off">
+                            <button type="button" class="btn btn-secondary" id="btnApplyVoucher">Áp dụng</button>
+                        </div>
+                        <div id="voucherApplyMessage" class="voucher-message" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bảng giá -->
+        <div class="section">
+            <div class="section-title"><span class="icon">🧾</span> Bảng giá</div>
+            <p class="hint" style="margin-bottom:10px;">Giá cập nhật theo lựa chọn của bạn.</p>
+            <div class="pricing-table" id="pricingTable">
+                <div class="pricing-row" data-key="flyingTexts"><span>Chữ bay</span><span class="price"
+                        id="priceFlyingTexts">—</span></div>
+                <div class="pricing-row" data-key="flyingImages"><span>Ảnh bay</span><span class="price"
+                        id="priceFlyingImages">—</span></div>
+                <div class="pricing-row" data-key="letter"><span>Lá thư</span><span class="price"
+                        id="priceLetter">—</span></div>
+                <div class="pricing-row" data-key="heart"><span>Trái tim hạt + ảnh đôi</span><span class="price"
+                        id="priceHeart">—</span></div>
+                <div class="pricing-row" data-key="music"><span>Nhạc nền</span><span class="price"
+                        id="priceMusic">—</span></div>
+                <div class="pricing-row inactive" data-key="expiration"><span>Hạn sử dụng</span><span class="price"
+                        id="priceExpiration">—</span></div>
+                <div class="pricing-row inactive" data-key="tip"><span>Tiền tip</span><span class="price"
+                        id="priceTip">—</span></div>
+                <div class="pricing-row inactive" data-key="voucherDiscount"><span>Giảm giá voucher</span><span class="price"
+                        id="priceVoucherDiscount">—</span></div>
+                <div class="pricing-total"><span>Tổng cộng</span><span class="price" id="priceTotal">—</span>
+                </div>
+                <p class="hint" id="pricePolarHint"
+                    style="display:none;margin-top:6px;margin-left:10px;font-size:.8rem;">Thanh toán (Visa/Mastercard):
+                    <strong id="priceTotalUsd">—</strong> USD
+                </p>
+            </div>
+        </div>
+
+        <!-- Phương thức thanh toán -->
+        <div class="form-group section" id="paymentMethodSection"
+            style="display:none;margin-top:8px;padding-top:20px;border-top:1px solid var(--border);">
+            <label style="font-size:1rem;font-weight:600;margin-bottom:4px;display:block;">💳 Phương thức thanh
+                toán</label>
+            <div class="payment-method-list">
+                <label class="payment-method-item">
+                    <input type="radio" name="paymentMethod" value="BANK_TRANSFER" checked>
+                    <div class="method-info">
+                        <div class="method-name">Chuyển khoản ngân hàng (VNĐ)</div>
+                        <div class="method-desc">Thanh toán qua ngân hàng nội địa, ví
+                            điện tử bằng hình thức chuyển khoản. Nếu bạn có mã giảm giá hãy nhập nó ở trang này.</div>
+                    </div>
+                </label>
+                <label class="payment-method-item">
+                    <input type="radio" name="paymentMethod" value="POLAR">
+                    <div class="method-info">
+                        <div class="method-name">Thanh toán quốc tế (Visa/Mastercard)</div>
+                        <div class="method-desc">Thanh toán quốc tế bằng thẻ (Visa, Mastercard). Nếu bạn có mã giảm giá
+                            hãy nhập nó ở trang này hoặc trang thanh toán.</div>
+                    </div>
+                </label>
+            </div>
+            <p class="payment-method-note">💡 Chọn phương thức phù hợp với bạn. Sau
+                khi thanh toán, website sẽ được kích hoạt ngay, không cần phải chờ đợi.</p>
+        </div>
+
+        <!-- Actions -->
+        <p class="hint" style="text-align:center;margin-top:12px;">
+            Nhấn <strong>Xem thử</strong> để kiểm tra giao diện trước khi thanh toán.
+        </p>
+        <div class="actions">
+            <button class="btn btn-primary" id="btnCreateWebsite" onclick="handleCreateWebsiteClick()">🌸 Tạo và Thanh
+                toán</button>
+            <button class="btn btn-ghost" onclick="handlePreviewClick()">👀 Xem thử</button>
+        </div>
+
+        <p class="hint" style="text-align:center;margin-top:12px;max-width:480px;margin-left:auto;margin-right:auto;">
+            Nếu bạn đã thanh toán xong rồi mà không thấy QR sản phẩm đâu đừng lo lắng hãy kéo lên và ấn vào nút
+            <strong>Lịch sử đơn</strong> sau đó ấn nút <strong>Kiếm tra</strong> nhé.
+        </p>
+
+        <nav class="policy-links" aria-label="Liên kết chính sách FestGift">
+            <a href="./contact/" target="_blank" rel="noopener">Liên hệ</a>
+            <a href="./pricingpolicy/" target="_blank" rel="noopener">Chính sách giá</a>
+            <a href="./paymentpolicy/" target="_blank" rel="noopener">Thanh toán</a>
+            <a href="./deliverypolicy/" target="_blank" rel="noopener">Giao nhận</a>
+            <a href="./refundpolicy/" target="_blank" rel="noopener">Hoàn trả</a>
+            <a href="./privacy/" target="_blank" rel="noopener">Bảo mật</a>
+            <a href="./terms/" target="_blank" rel="noopener">Điều khoản</a>
+            <a href="./salesterms/" target="_blank" rel="noopener">Mua bán</a>
+            <a href="./cookiepolicy/" target="_blank" rel="noopener">Cookie</a>
+        </nav>
+
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <!-- Help preview modal -->
+    <div id="helpModalOverlay" class="help-modal-overlay" style="display:none;">
+        <div class="help-modal">
+            <div class="help-modal-header">
+                <span id="helpModalTitle">Ví dụ hiển thị</span>
+                <button type="button" class="help-modal-close" id="helpModalClose">×</button>
+            </div>
+            <div class="help-modal-body" id="helpModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Lucky Wheel overlay (static, JS inject nội dung vào fg-lw-body như helpModalBody) -->
+    <div id="fg-lw-overlay" aria-label="Vòng quay may mắn">
+        <div id="fg-lw-panel">
+            <div id="fg-lw-body">
+                <button id="fg-lw-close" aria-label="Đóng">&times;</button>
+                <h2 id="fg-lw-title">Vòng Quay May Mắn</h2>
+                <p id="fg-lw-sub">Quay và nhận mã giảm giá!</p>
+                <div id="fg-lw-wheel-wrap">
+                    <canvas id="fg-lw-canvas"></canvas>
+                    <div id="fg-lw-pointer" aria-hidden="true"></div>
+                    <button id="fg-lw-spin-btn" aria-label="Quay">QUAY</button>
+                </div>
+                <p id="fg-lw-status">Đang kiểm tra...</p>
+                <p id="fg-lw-status-cannot-spin" style="display:none;color:#FC5C65;font-size:13px;margin:10px 0 0;">Bạn
+                    đã quay vòng quay trước đó, hãy quay lại vào đầu tháng</p>
+                <p id="fg-lw-status-error" style="display:none;color:#FC5C65;font-size:13px;margin:10px 0 0;">Bạn đã
+                    quay vòng quay trước đó, hãy quay lại vào đầu tháng</p>
+                <p id="fg-lw-status-spinning"
+                    style="display:none;color:rgba(255,255,255,.5);font-size:13px;margin:10px 0 0;">Đang quay...</p>
+                <p id="fg-lw-status-won"
+                    style="display:none;color:rgba(255,255,255,.5);font-size:13px;margin:10px 0 0;">Bạn đã trúng thưởng!
+                </p>
+                <p id="fg-lw-status-checking"
+                    style="display:none;color:rgba(255,255,255,.5);font-size:13px;margin:10px 0 0;">Đang kiểm tra...</p>
+                <div id="fg-lw-result" role="alert">
+                    <div id="fg-lw-result-prize"></div>
+                    <div id="fg-lw-result-title">Chúc mừng! Bạn nhận được</div>
+                    <div id="fg-lw-result-code">
+                        <div class="lw-code-label">Mã giảm giá</div>
+                        <strong></strong>
+                    </div>
+                    <div id="fg-lw-result-expiry" style="display:none;">Hạn sử dụng: <span
+                            id="fg-lw-expiry-date"></span></div>
+                    <button id="fg-lw-result-close">Tuyệt vời!</button>
+                </div>
+                <canvas id="fg-lw-confetti" aria-hidden="true"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- <p class="hint" style="margin-top:6px;margin-left:10px;text-align: center;font-size:.8rem; color: #ff6b6b;">
+        Thông báo: từ ngày 25/5/2026 website chính thức tích hợp các phương thức thanh toán trực tuyến
+    </p> -->
+
+    <script defer src="./dist/js/idb-storage.js?v=1790143258759"></script>
+    <script defer src="./dist/js/create.js?v=1790143258759"></script>
+    <script defer src="./dist/js/lucky-wheel.js?v=1790143258759"></script>
+    <script defer>
+
+        // ── Lucky Wheel integration cho create.html ──────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            var wheelBtn = document.getElementById('btnOpenLuckyWheel');
+            if (!wheelBtn) return;
+
+            // Hiện button chỉ khi user đã đăng nhập — dùng firebase.auth() từ create.js
+            function setupWheelBtn() {
+                if (typeof firebase === 'undefined' || !firebase.auth) {
+                    setTimeout(setupWheelBtn, 400);
+                    return;
+                }
+                firebase.auth().onAuthStateChanged(function (user) {
+                    wheelBtn.style.display = user ? '' : 'none';
+                });
+            }
+            setupWheelBtn();
+
+            // Mở vòng quay khi click — truyền getToken từ create.js để tái sử dụng auth
+            wheelBtn.addEventListener('click', function () {
+                LuckyWheel.open({
+                    // Tái dùng getAuthToken() đã có trong create.js — không duplicate auth
+                    getToken: typeof getAuthToken === 'function' ? getAuthToken : undefined,
+                    onNotEligible: function (reason) {
+                        var msgs = {
+                            not_logged_in: 'Vui lòng đăng nhập để quay',
+                            cannot_spin: 'Bạn đã quay vòng quay trước đó, hãy quay lại vào đầu tháng hoặc đăng nhập tài khoản mới',
+                            error: 'Không thể kết nối server'
+                        };
+                        if (typeof toast === 'function') {
+                            toast(msgs[reason] || reason, 'error');
+                        } else {
+                            alert(msgs[reason] || reason);
+                        }
+                    },
+                    onCouponReceived: function (couponCode) {
+                        var input = document.getElementById('voucherCodeInput');
+                        var applyBtn = document.getElementById('btnApplyVoucher');
+                        if (input && couponCode) {
+                            input.value = couponCode;
+                            input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            if (applyBtn) {
+                                setTimeout(function () { applyBtn.click(); }, 300);
+                            }
+                        }
+                        // Reload danh sách mã giảm giá
+                        if (typeof loadVouchers === 'function') {
+                            loadVouchers();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3fa20298cfde2e2',t:'MTc5MDE3MjU1MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
