@@ -1,0 +1,701 @@
+{
+  "schemaVersion": "1.0.0",
+  "scene": {
+    "id": "mid-autumn-poster",
+    "referenceCanvas": {
+      "width": 551,
+      "height": 827,
+      "aspectRatio": 0.6662636034,
+      "viewBox": "0 0 551 827",
+      "coordinateUnit": "reference-pixel"
+    },
+    "responsiveStrategy": "Render the scene as one SVG with viewBox 0 0 551 827 and width 100%; do not recalculate layer coordinates per breakpoint.",
+    "containsTextLayer": false,
+    "backgroundColor": "#050a14",
+    "portraitFocusY": 284.5,
+    "moonHint": {
+      "text": "Ấn giữ vào mặt trăng",
+      "screenFontPx": 13,
+      "screenBottomPx": 40
+    }
+  },
+  "clipPaths": {
+    "window-aperture": {
+      "type": "svg-path",
+      "viewBox": "0 0 551 827",
+      "d": "M168 133 C180 88 218 59 269 57 C338 53 404 88 442 142 C483 198 487 274 464 332 C437 398 370 438 294 444 C218 449 148 414 106 356 C67 303 68 232 91 179 C108 148 136 132 168 133 Z",
+      "purpose": "Clip the night sky, stars, moon, mountains and the three lanterns that remain inside the window. The large upper-right lantern is intentionally outside this group because it overlaps the rim."
+    }
+  },
+  "placementRules": {
+    "alpha-content-box": {
+      "description": "targetContentBoxPx describes where the visible alpha content belongs on the 551x827 canvas. Use asset.alphaContentRectPx to compensate for transparent padding.",
+      "fit": "contain",
+      "formula": {
+        "scale": "min(target.width / alpha.width, target.height / alpha.height)",
+        "renderWidth": "asset.width * scale",
+        "renderHeight": "asset.height * scale",
+        "renderX": "target.x + (target.width - alpha.width * scale) / 2 - alpha.x * scale",
+        "renderY": "target.y + (target.height - alpha.height * scale) / 2 - alpha.y * scale"
+      }
+    },
+    "box": {
+      "description": "Render directly at boxPx. Intended for opaque/full-bleed background plates."
+    }
+  },
+  "layers": [
+    {
+      "id": "red-background",
+      "file": "00-red-background-no-text.webp",
+      "zIndex": 0,
+      "group": "outside",
+      "placement": {
+        "mode": "box",
+        "boxPx": {
+          "x": 0,
+          "y": 0,
+          "width": 551,
+          "height": 827
+        }
+      },
+      "asset": {
+        "width": 941,
+        "height": 1672
+      },
+      "animation": {
+        "preset": "none"
+      }
+    },
+    {
+      "id": "night-sky",
+      "file": "01-night-sky.webp",
+      "zIndex": 10,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "box",
+        "boxPx": {
+          "x": 62,
+          "y": 27,
+          "width": 433,
+          "height": 428
+        }
+      },
+      "asset": {
+        "width": 1254,
+        "height": 1254
+      },
+      "animation": {
+        "preset": "slow-drift",
+        "translateXPercent": [
+          -0.8,
+          0.8
+        ],
+        "durationSeconds": 18
+      }
+    },
+    {
+      "id": "stars",
+      "file": "03-stars.webp",
+      "zIndex": 20,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 78,
+          "y": 65,
+          "width": 390,
+          "height": 355
+        }
+      },
+      "asset": {
+        "width": 1254,
+        "height": 1254,
+        "alphaContentRectPx": {
+          "x": 196,
+          "y": 132,
+          "width": 916,
+          "height": 983
+        }
+      },
+      "animation": {
+        "preset": "twinkle",
+        "opacity": [
+          0.45,
+          1
+        ],
+        "durationSeconds": [
+          1.8,
+          4.2
+        ],
+        "staggered": true
+      }
+    },
+    {
+      "id": "full-moon",
+      "file": "02-full-moon.webp",
+      "zIndex": 30,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 113,
+          "y": 73,
+          "width": 169,
+          "height": 169
+        }
+      },
+      "asset": {
+        "width": 1262,
+        "height": 1246,
+        "alphaContentRectPx": {
+          "x": 101,
+          "y": 99,
+          "width": 1049,
+          "height": 1038
+        }
+      },
+      "animation": {
+        "preset": "glow-pulse",
+        "scale": [
+          1,
+          1.012
+        ],
+        "opacity": [
+          0.94,
+          1
+        ],
+        "durationSeconds": 5.5,
+        "transformOrigin": "50% 50%"
+      }
+    },
+    {
+      "id": "mountains",
+      "file": "04-mountains.webp",
+      "zIndex": 40,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 158,
+          "y": 274,
+          "width": 310,
+          "height": 174
+        }
+      },
+      "asset": {
+        "width": 1810,
+        "height": 869,
+        "alphaContentRectPx": {
+          "x": 35,
+          "y": 329,
+          "width": 1749,
+          "height": 269
+        }
+      },
+      "animation": {
+        "preset": "parallax-x",
+        "translateXPercent": [
+          -0.6,
+          0.6
+        ],
+        "durationSeconds": 22
+      }
+    },
+    {
+      "id": "lantern-distant",
+      "file": "06-lantern-distant.webp",
+      "zIndex": 50,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 303,
+          "y": 156,
+          "width": 26,
+          "height": 36
+        }
+      },
+      "asset": {
+        "width": 1240,
+        "height": 1268,
+        "alphaContentRectPx": {
+          "x": 160,
+          "y": 76,
+          "width": 1015,
+          "height": 1107
+        }
+      },
+      "animation": {
+        "preset": "lantern-float",
+        "translateYPx": [
+          -3,
+          3
+        ],
+        "rotateDegrees": [
+          -1,
+          1
+        ],
+        "durationSeconds": 4.8,
+        "delaySeconds": 1.1
+      }
+    },
+    {
+      "id": "lantern-small-right",
+      "file": "06-lantern-distant.webp",
+      "zIndex": 52,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 378,
+          "y": 213,
+          "width": 41,
+          "height": 51
+        }
+      },
+      "asset": {
+        "width": 1240,
+        "height": 1268,
+        "alphaContentRectPx": {
+          "x": 160,
+          "y": 76,
+          "width": 1015,
+          "height": 1107
+        }
+      },
+      "animation": {
+        "preset": "lantern-float",
+        "translateYPx": [
+          -4,
+          4
+        ],
+        "rotateDegrees": [
+          -1.4,
+          1.4
+        ],
+        "durationSeconds": 4.2,
+        "delaySeconds": 0.6
+      }
+    },
+    {
+      "id": "lantern-medium-center",
+      "file": "06-lantern-distant.webp",
+      "zIndex": 54,
+      "group": "window-content",
+      "clipPath": "window-aperture",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 270,
+          "y": 269,
+          "width": 87,
+          "height": 107
+        }
+      },
+      "asset": {
+        "width": 1240,
+        "height": 1268,
+        "alphaContentRectPx": {
+          "x": 160,
+          "y": 76,
+          "width": 1015,
+          "height": 1107
+        }
+      },
+      "animation": {
+        "preset": "lantern-float",
+        "translateYPx": [
+          -5,
+          5
+        ],
+        "rotateDegrees": [
+          -1.2,
+          1.2
+        ],
+        "durationSeconds": 5.1,
+        "delaySeconds": 0.2
+      }
+    },
+    {
+      "id": "window-frame",
+      "file": "05-window-frame.webp",
+      "zIndex": 60,
+      "group": "outside",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 62,
+          "y": 27,
+          "width": 433,
+          "height": 428
+        }
+      },
+      "asset": {
+        "width": 1254,
+        "height": 1254,
+        "alphaContentRectPx": {
+          "x": 57,
+          "y": 63,
+          "width": 1140,
+          "height": 1123
+        }
+      },
+      "animation": {
+        "preset": "none"
+      }
+    },
+    {
+      "id": "lantern-large-over-frame",
+      "file": "06-lantern-distant.webp",
+      "zIndex": 70,
+      "group": "outside",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 345,
+          "y": 36,
+          "width": 137,
+          "height": 151
+        }
+      },
+      "asset": {
+        "width": 1240,
+        "height": 1268,
+        "alphaContentRectPx": {
+          "x": 160,
+          "y": 76,
+          "width": 1015,
+          "height": 1107
+        }
+      },
+      "animation": {
+        "preset": "lantern-float",
+        "translateYPx": [
+          -6,
+          6
+        ],
+        "rotateDegrees": [
+          -1,
+          1
+        ],
+        "durationSeconds": 5.8,
+        "delaySeconds": 0
+      }
+    },
+    {
+      "id": "cloud-left",
+      "file": "14-cloud-left.webp",
+      "zIndex": 80,
+      "group": "outside",
+      "qualityStatus": "needs-cleanup",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 3,
+          "y": 232,
+          "width": 154,
+          "height": 40
+        }
+      },
+      "asset": {
+        "width": 2097,
+        "height": 750,
+        "alphaContentRectPx": {
+          "x": 83,
+          "y": 170,
+          "width": 1947,
+          "height": 415
+        }
+      },
+      "animation": {
+        "preset": "cloud-drift",
+        "translateXPx": [
+          -5,
+          5
+        ],
+        "durationSeconds": 8
+      }
+    },
+    {
+      "id": "cloud-right",
+      "file": "15-cloud-right.webp",
+      "zIndex": 81,
+      "group": "outside",
+      "qualityStatus": "needs-cleanup",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 375,
+          "y": 309,
+          "width": 148,
+          "height": 47
+        }
+      },
+      "asset": {
+        "width": 1935,
+        "height": 812,
+        "alphaContentRectPx": {
+          "x": 112,
+          "y": 193,
+          "width": 1726,
+          "height": 501
+        }
+      },
+      "animation": {
+        "preset": "cloud-drift",
+        "translateXPx": [
+          5,
+          -5
+        ],
+        "durationSeconds": 9
+      }
+    },
+    {
+      "id": "osmanthus-branch",
+      "file": "10-branch-first-batch.webp",
+      "zIndex": 90,
+      "group": "outside",
+      "placement": {
+        "mode": "alpha-content-box-stretch",
+        "targetContentBoxPx": {
+          "x": -21,
+          "y": 305,
+          "width": 406,
+          "height": 237
+        },
+        "note": "Đo từ ảnh chuẩn: lá cây phủ x 2..385, y 357..559. PNG cành có tỉ lệ dài hơn bản gốc nên kéo dọc ~28% để khớp bóng đã in sẵn trong nền."
+      },
+      "asset": {
+        "width": 1774,
+        "height": 887,
+        "alphaContentRectPx": {
+          "x": 47,
+          "y": 61,
+          "width": 1660,
+          "height": 754
+        }
+      },
+      "animation": {
+        "preset": "branch-sway",
+        "rotateDegrees": [
+          -0.35,
+          0.35
+        ],
+        "durationSeconds": 7,
+        "transformOrigin": "4% 42%"
+      }
+    },
+    {
+      "id": "jade-rabbit",
+      "file": "11-rabbit.webp",
+      "zIndex": 100,
+      "group": "outside",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 154,
+          "y": 346,
+          "width": 81,
+          "height": 90
+        },
+        "note": "Đo từ ảnh chuẩn: thân thỏ trắng phủ x 155..229, y 351..452, chân chạm cành ở y≈452."
+      },
+      "asset": {
+        "width": 1292,
+        "height": 1218,
+        "alphaContentRectPx": {
+          "x": 161,
+          "y": 120,
+          "width": 931,
+          "height": 1036
+        }
+      },
+      "animation": {
+        "preset": "rabbit-breathe",
+        "translateYPx": [
+          0,
+          -1.5
+        ],
+        "scale": [
+          1,
+          1.006
+        ],
+        "durationSeconds": 3.6,
+        "transformOrigin": "50% 100%"
+      }
+    },
+    {
+      "id": "single-petal-template",
+      "file": "12-single-petal.webp",
+      "zIndex": 110,
+      "group": "particles",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 72,
+          "y": 616,
+          "width": 12,
+          "height": 20
+        }
+      },
+      "asset": {
+        "width": 1254,
+        "height": 1254,
+        "alphaContentRectPx": {
+          "x": 364,
+          "y": 266,
+          "width": 500,
+          "height": 659
+        }
+      },
+      "repeat": {
+        "recommendedCount": 12,
+        "areaPx": {
+          "x": 5,
+          "y": 470,
+          "width": 325,
+          "height": 345
+        },
+        "randomScale": [
+          0.35,
+          1
+        ],
+        "randomRotationDegrees": [
+          0,
+          360
+        ]
+      },
+      "animation": {
+        "preset": "petal-fall",
+        "translateYPx": [
+          0,
+          180
+        ],
+        "translateXPx": [
+          -25,
+          25
+        ],
+        "rotateDegrees": [
+          0,
+          260
+        ],
+        "durationSeconds": [
+          5.5,
+          10
+        ],
+        "staggered": true
+      }
+    },
+    {
+      "id": "single-flower-template",
+      "file": "13-single-flower.webp",
+      "zIndex": 111,
+      "group": "particles",
+      "placement": {
+        "mode": "alpha-content-box",
+        "targetContentBoxPx": {
+          "x": 261,
+          "y": 700,
+          "width": 22,
+          "height": 22
+        }
+      },
+      "asset": {
+        "width": 1270,
+        "height": 1239,
+        "alphaContentRectPx": {
+          "x": 389,
+          "y": 361,
+          "width": 547,
+          "height": 512
+        }
+      },
+      "repeat": {
+        "recommendedCount": 8,
+        "areaPx": {
+          "x": 15,
+          "y": 445,
+          "width": 335,
+          "height": 370
+        },
+        "randomScale": [
+          0.35,
+          0.9
+        ],
+        "randomRotationDegrees": [
+          0,
+          360
+        ]
+      },
+      "animation": {
+        "preset": "flower-fall",
+        "translateYPx": [
+          0,
+          160
+        ],
+        "translateXPx": [
+          -18,
+          18
+        ],
+        "rotateDegrees": [
+          0,
+          190
+        ],
+        "durationSeconds": [
+          6,
+          11
+        ],
+        "staggered": true
+      }
+    }
+  ],
+  "implementationNotes": [
+    "Render layers in ascending zIndex order.",
+    "Layers in window-content must be inside the window-aperture SVG clipPath.",
+    "Do not clip lantern-large-over-frame, clouds, branch or rabbit.",
+    "The two cloud files are marked needs-cleanup and should not be treated as final production assets.",
+    "All target boxes are measured from the supplied 551x827 JPG and are approximate because the supplied PNG elements are reconstructed assets, not original design layers.",
+    "Do not add a title layer; the requested composition intentionally omits Trung Thu Doan Vien."
+  ],
+  "bloomSpots": [
+    {
+      "x": 34,
+      "y": 405
+    },
+    {
+      "x": 70,
+      "y": 392
+    },
+    {
+      "x": 138,
+      "y": 436
+    },
+    {
+      "x": 195,
+      "y": 452
+    },
+    {
+      "x": 250,
+      "y": 470
+    },
+    {
+      "x": 292,
+      "y": 472
+    },
+    {
+      "x": 345,
+      "y": 480
+    },
+    {
+      "x": 105,
+      "y": 372
+    }
+  ],
+  "fallFloor": 800
+}
